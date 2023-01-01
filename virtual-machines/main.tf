@@ -7,21 +7,17 @@ provider "aws" {
 	region = "us-east-1"
 }
 
-module "my_instance_module" {
+module "ec2_instance_one" {
         source = "./ec2-module/instance"
-        ami = "ami-0beaa649c482330f7"
-        instance_type = "t2.nano"
         instance_name = "myvm01"
 }
 
-module "my_instance_module_two" {
+module "ec2_instance_two" {
         source = "./ec2-module/instance"
-        ami = "ami-0beaa649c482330f7"
-        instance_type = "t2.nano"
         instance_name = "myvm02"
 }
 
-module "my_instance_module_three" {
+module "ec2_instance_three" {
         source = "./ec2-module/instance"
         providers = {
           aws = aws.prod
