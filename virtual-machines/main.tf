@@ -1,12 +1,3 @@
-# terraform {
-#   required_providers {
-#     aws = {
-#       source  = "hashicorp/aws"
-#       version = ">= 2.7.0"
-#     }
-#   }
-# }
-
 provider "aws" {
 	region = var.aws_region
 }
@@ -17,21 +8,21 @@ provider "aws" {
 }
 
 module "my_instance_module" {
-        source = "./my-modules/instance"
+        source = "./ec2-module/instance"
         ami = "ami-0beaa649c482330f7"
         instance_type = "t2.nano"
         instance_name = "myvm01"
 }
 
 module "my_instance_module_two" {
-        source = "./my-modules/instance"
+        source = "./ec2-module/instance"
         ami = "ami-0beaa649c482330f7"
         instance_type = "t2.nano"
         instance_name = "myvm02"
 }
 
 module "my_instance_module_three" {
-        source = "./my-modules/instance"
+        source = "./ec2-module/instance"
         providers = {
           aws = aws.prod
         }
