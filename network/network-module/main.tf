@@ -12,7 +12,7 @@ resource "aws_vpc" "vpc" {
   enable_dns_hostnames = true
 }
 
-resource "aws_subnet" "public-subnet" {
+resource "aws_subnet" "public_subnet" {
   vpc_id            = aws_vpc.vpc.id
   cidr_block        = var.public_subnet_cidr
   availability_zone = var.aws_az
@@ -35,7 +35,7 @@ resource "aws_route_table" "public-rt" {
 }
 
 resource "aws_route_table_association" "public-rt-association" {
-  subnet_id      = aws_subnet.public-subnet.id
+  subnet_id      = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.public-rt.id
 }
 
