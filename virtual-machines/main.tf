@@ -17,6 +17,7 @@ module "ec2_instance_two" {
         instance_name = "myvm02"
 }
 
+# deploys in east region 1
 module "ec2_instance_three" {
         source = "./ec2-module/instance"
         providers = {
