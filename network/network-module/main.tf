@@ -45,7 +45,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone       = var.aws_az
   tags = {
     Name        = "private"
-}
+  }
 }
 
 resource "aws_vpc_dhcp_options" "local_network" {
