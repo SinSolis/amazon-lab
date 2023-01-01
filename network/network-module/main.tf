@@ -47,3 +47,16 @@ resource "aws_subnet" "private_subnet" {
     Name        = "private"
 }
 }
+
+resource "aws_vpc_dhcp_options" "local_network" {
+  domain_name          = "lab.local"
+  domain_name_servers  = ["AmazonProvidedDNS"]
+  tags = {
+    Name = "internal-dhcp"
+  }
+}
+
+resource "aws_vpc_dhcp_options_association" "dns_resolver" {
+  vpc_id          = aws_vpc.vpc.id
+  dhcp_options_id = aws_vpc_dhcp_options.local_network.id
+}
