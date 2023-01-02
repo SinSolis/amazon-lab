@@ -8,20 +8,20 @@ provider "aws" {
 }
 
 module "ec2_instance_one" {
-        source = "./ec2-module/instance"
+        source = "./ec2-module"
         instance_name = "myvm01"
         subnet_test_public = "subnet-0a60b1ae5d6d6ba57"   
 }
 
 module "ec2_instance_two" {
-        source = "./ec2-module/instance"
+        source = "./ec2-module"
         subnet_test_private = "subnet-0391eb4aa6a6e9892"
         instance_name = "myvm02"
 }
 
 # deploys in east region 1
 module "ec2_instance_three" {
-        source = "./ec2-module/instance"
+        source = "./ec2-module"
         providers = {
           aws = aws.prod
         }
