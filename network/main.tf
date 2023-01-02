@@ -20,14 +20,14 @@ provider "aws" {
 }
 
 module "network_one" {
-        source = "./network-module/"
+        source = "./network-module"
 }
 
-# deploys in east region 1
-module "network_two" {
-    source = "./network-module/"
-    aws_az = "us-east-1a"
-    providers = {
-        aws = aws.prod
-    }
-}
+# # deploys in east region 1
+# module "network_two" {
+#     source = "./network-module/"
+#     aws_az = "us-east-1a"
+#     providers = {
+#         aws = aws.prod
+#     }
+# }
