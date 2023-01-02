@@ -10,7 +10,6 @@ resource "aws_instance" "my_instance" {
 	ami = var.ami
 	instance_type = var.instance_type
   key_name      = var.key_name
-  subnet_id     = var.subnet_test_public
 
   # root disk
   root_block_device {

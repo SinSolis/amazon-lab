@@ -43,22 +43,8 @@ variable "data_volume_type" {
   default     = "gp2"
 }
 
-variable "subnet_test_private" {
+variable "subnet_id" {
   type        = string
-  default     = "subnet-0391eb4aa6a6e9892"
-}
-
-variable "subnet_test_public" {
-  type        = string
-  default     = "subnet-0a60b1ae5d6d6ba57"
-}
-
-variable "subnet_prod_private" {
-  type        = string
-  default     = "subnet-096fb3a94ea2df20f"
-}
-
-variable "subnet_prod_public" {
-  type        = string
-  default     = "subnet-0f6d1e72edef4904a"
+  description = "subnet"
+  default     = "gp2"
 }
