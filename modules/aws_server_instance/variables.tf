@@ -45,7 +45,7 @@ variable "data_volume_type" {
 
 variable "vpc_sg_id" {
   type        = list(string)
-  description = "subnet"
+  description = "default sg created with vpc"
 }
 
 variable "subnet_id" {
