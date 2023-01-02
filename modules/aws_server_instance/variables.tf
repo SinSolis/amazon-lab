@@ -43,8 +43,12 @@ variable "data_volume_type" {
   default     = "gp2"
 }
 
+variable "vpc_sg_id" {
+  type        = list(string)
+  description = "subnet"
+}
+
 variable "subnet_id" {
   type        = string
   description = "subnet"
-  default     = "gp2"
 }
