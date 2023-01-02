@@ -1,4 +1,5 @@
 provider "aws" {
+    alias  = "test"
     region = "us-east-2"
     default_tags {
       tags = {
