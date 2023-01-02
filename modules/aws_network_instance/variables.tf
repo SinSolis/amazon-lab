@@ -21,4 +21,3 @@ variable "aws_az" {
   description = "AWS AZ"
   default     = "us-east-2a"
 }
-
